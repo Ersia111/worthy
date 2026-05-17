@@ -95,4 +95,4 @@ https://loquacious-starship-e20733.netlify.app/
 
 ## Author
 
-Developed by Ersia Shemilli
+Developed by Ersia Shemilli , Joris Bardhi , Jona Kollcaku 
