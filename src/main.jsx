@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+//Importohet BrowserRouter për të mundësuar navigimin midis faqeve me React Router.
+ReactDOM.createRoot(document.getElementById('root')).render( //Renderon aplikacionin në browser.
+//  Mbështjell aplikacionin për të aktivizuar React Router dhe routes.
   <React.StrictMode>
     <BrowserRouter>
       <App />
