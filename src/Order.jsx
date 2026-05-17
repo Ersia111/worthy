@@ -1,4 +1,4 @@
-import './Order.css';
+import './Order.css'
 
 function Order({
   products,
@@ -15,11 +15,12 @@ function Order({
     <main className="page">
       <section className="section orderSection">
         <div className="orderPreviewSide">
-          <button className="backButton" onClick={() => goToPage('home')}>
+          <button className="backButton" type="button" onClick={() => goToPage('/')}>
             ← Back Home
           </button>
 
           <h2>{editingOrderId ? 'Edit Your Order' : 'Create Your Order'}</h2>
+
           <p className="sectionIntro">
             Fill the form to create a personalized order. After adding it, the order
             will be saved in your cart and can be edited later.
@@ -105,13 +106,15 @@ function Order({
                 </>
               )}
             </div>
+
             <p>Product preview changes with your selected design colors.</p>
           </div>
         </div>
 
         <form className="orderForm" onSubmit={handleSubmit}>
-          <label>Client Name</label>
+          <label htmlFor="name">Client Name</label>
           <input
+            id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -119,8 +122,9 @@ function Order({
             required
           />
 
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             value={formData.email}
@@ -129,15 +133,23 @@ function Order({
             required
           />
 
-          <label>Product Type</label>
-          <select name="product" value={formData.product} onChange={handleChange}>
+          <label htmlFor="product">Product Type</label>
+          <select
+            id="product"
+            name="product"
+            value={formData.product}
+            onChange={handleChange}
+          >
             {products.map((product) => (
-              <option key={product.id}>{product.name}</option>
+              <option key={product.id} value={product.name}>
+                {product.name}
+              </option>
             ))}
           </select>
 
-          <label>Quantity</label>
+          <label htmlFor="quantity">Quantity</label>
           <input
+            id="quantity"
             type="number"
             name="quantity"
             min="1"
@@ -146,8 +158,9 @@ function Order({
             required
           />
 
-          <label>Max Price</label>
+          <label htmlFor="maxPrice">Max Price</label>
           <input
+            id="maxPrice"
             name="maxPrice"
             value={formData.maxPrice}
             onChange={handleChange}
@@ -179,8 +192,9 @@ function Order({
             ))}
           </div>
 
-          <label>Notes</label>
+          <label htmlFor="notes">Notes</label>
           <textarea
+            id="notes"
             name="notes"
             value={formData.notes}
             onChange={handleChange}
@@ -194,7 +208,7 @@ function Order({
         </form>
       </section>
     </main>
-  );
+  )
 }
 
-export default Order;
+export default Order

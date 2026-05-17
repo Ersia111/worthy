@@ -1,13 +1,15 @@
-import './Products.css';
+import './Products.css'
 
 function Products({ products, designs, goToPage, startOrder, addProductToCart }) {
   return (
     <main className="page">
       <section className="section">
-        <button className="backButton" onClick={() => goToPage('home')}>
+        <button className="backButton" type="button" onClick={() => goToPage('/')}>
           ← Back Home
         </button>
+
         <h2>Choose Your Product</h2>
+
         <p className="sectionIntro">
           Pick a product type and personalize it based on your own routine.
         </p>
@@ -56,6 +58,7 @@ function Products({ products, designs, goToPage, startOrder, addProductToCart })
                       <span></span>
                       <strong>W</strong>
                     </div>
+
                     <div className="miniPalette">
                       <span></span>
                       <div>
@@ -65,6 +68,7 @@ function Products({ products, designs, goToPage, startOrder, addProductToCart })
                       </div>
                       <strong>Worthy</strong>
                     </div>
+
                     <div className="miniCompact">W</div>
                   </div>
                 </div>
@@ -100,15 +104,26 @@ function Products({ products, designs, goToPage, startOrder, addProductToCart })
 
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <p><strong>Price range:</strong> {product.priceRange}</p>
+              <p>
+                <strong>Price range:</strong> {product.priceRange}
+              </p>
+
               <div className="miniFeatures">
                 {product.features.map((feature) => (
                   <span key={feature}>{feature}</span>
                 ))}
               </div>
+
               <div className="productActions">
-                <button onClick={() => startOrder(product.name)}>Customize</button>
-                <button className="addCartButton" onClick={() => addProductToCart(product)}>
+                <button type="button" onClick={() => startOrder(product.name)}>
+                  Customize
+                </button>
+
+                <button
+                  type="button"
+                  className="addCartButton"
+                  onClick={() => addProductToCart(product)}
+                >
                   Add to Cart
                 </button>
               </div>
@@ -117,7 +132,7 @@ function Products({ products, designs, goToPage, startOrder, addProductToCart })
         </div>
       </section>
     </main>
-  );
+  )
 }
 
-export { Products as default };
+export default Products
